@@ -1,0 +1,54 @@
+.top-blocks {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.stats, .history-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 185px;
+    font-size: .875rem;
+    font-weight: 800;
+    border: 0.5px solid #787878;
+    border-radius: 0.8125rem;
+    background: #fff;
+    width: 360px;
+    margin: 0 auto;
+}
+
+.stats {
+    flex-direction: row;
+    gap: 30px;
+}
+
+.stats p {
+    margin: 0;
+}
+
+.stats .line {
+    height: 50%;
+    background: #787878;
+    width: 2px;
+}
+
+.stats .big-font {
+    font-size: 4rem;
+}
+.stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.history-small {
+    flex-direction: column;
+}
+
+.history-small p {
+    margin-bottom: 6px;
+}

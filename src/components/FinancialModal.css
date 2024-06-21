@@ -1,0 +1,133 @@
+.financial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    /* max-width: 380px; */
+    padding: 30px;
+}
+
+.pig-svg {
+    height: 152px;
+}
+
+.fin-modal {
+    --height: 80%;
+    --border-radius: 3rem 3rem 0 0;
+    align-items: end;
+}
+
+.input-container {
+    width: 100%;
+    height: 133px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fin-boxes {
+    border: 1px solid #787878;
+    /* display: inline-block; */
+    border-radius: 1rem;
+    text-align: center;
+    height: 100%;
+}
+
+.dollar {
+    width: 177px;
+    margin-right: 5px;
+    /* font-size: 6rem; */
+    color: #35C454;
+}
+
+.time {
+    width: 142px;
+    margin-left: 5px;
+    /* display: block; */
+    font-size: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+    color: #353535;
+}
+
+.time p {
+    margin: 0;
+}
+
+.time p:nth-of-type(2) {
+    font-size: 1.5rem;
+}
+
+ion-popover {
+    --background: rgba(40, 173, 218, 0.6);
+    --backdrop-opacity: 0.6;
+    --box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.6);
+    --color: white;
+    --width: 300px;
+    --height: 300px;
+}
+
+.ion-delegate-host {
+    height: 100%;
+    width: 100%;
+}
+
+.time-popover {
+    backdrop: red;
+    width: 100%;
+    height: 100%;
+}
+  
+
+.dollar-input {
+    background: transparent;
+    border: unset;
+    /* width: 1ch; */
+    margin: 0;
+    display: inline;
+}
+
+.dollar-input::placeholder {
+    color: #35c45482;
+}
+
+.confirm {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    height: 170px;
+    --background: #D9D9D9;
+    color: #353535;
+    --border-radius: 1rem;
+    text-transform: unset;
+}
+
+.confirm-text p:nth-of-type(1) {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 400;
+}
+.confirm-text p:nth-of-type(2){
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 21px;
+    height: 21px;
+}
+
+ion-content{
+    --keyboard-offset: 0 !important;
+}

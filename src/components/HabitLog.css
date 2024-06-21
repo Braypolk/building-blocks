@@ -1,0 +1,43 @@
+.logBlock {
+    display: flex;
+    gap: 20px;
+}
+
+.monthBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.month {
+    font-size: 0.625rem;
+    font-weight: 500;
+}
+
+.weekBlock {
+    margin: auto;
+    position: relative;
+}
+
+.logDay {
+    position: absolute;
+    left: -1.375rem;
+    margin: 0;
+    width: 1rem;
+    text-align: right;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.weekBoxes {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.weekBoxes div {
+    width: 1rem;
+    height: 1rem;
+    background: #F8FCFF;
+    border: 0.5px solid #C2C2C2;
+    border-radius: 0.1875rem;
+}

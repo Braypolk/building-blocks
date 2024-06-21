@@ -1,0 +1,26 @@
+.close-button {
+    width: 31px;
+    height: 31px;
+    min-height: 31px;
+    min-width: 31px;
+    margin: 0;
+}
+
+.close-button::part(native) {
+    padding: 5px;
+    background: #D9D9D9;
+    border-radius: 50%;
+}
+
+.close-button::part(icon), .close-button ion-icon {
+    color: black;
+    --ionicon-stroke-width: 50px
+}
+
+/* .close-button ion-icon {
+    background: red;
+} */
+
+/* ion-fab-button::part(native) {
+    background-color: #b7f399;
+} */
