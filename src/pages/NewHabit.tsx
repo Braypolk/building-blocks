@@ -46,7 +46,7 @@ const NewHabit: React.FC = () => {
     console.log(habit.finalGoal);
 
     if (habit.finalGoal && habit.finalGoal !== '') {
-      const newHabit: HabitType = { ...habit, id: habitList.length + 1, steps: steps, habitTimes: habitTimes };
+      const newHabit: HabitType = { ...habit, id: habitList.length + 1, steps: [...steps, habit.finalGoal], habitTimes: habitTimes };
       setHabitList([...habitList, newHabit]);
       // bug: not resetting properly
       setHabit({
@@ -69,11 +69,6 @@ const NewHabit: React.FC = () => {
       alert('Please enter a habit')
     }
   };
-
-  useEffect(() => {
-    console.log(habit);
-
-  }, [habit]);
 
   return (
     <IonPage>
@@ -123,7 +118,7 @@ const NewHabit: React.FC = () => {
 
                   <p>{index + 1}</p>
                   <IonInput
-                    onIonChange={(e) => setSteps(prevStep => {
+                    onIonInput={(e) => setSteps(prevStep => {
                       let updatedStep = [...prevStep];
                       updatedStep[index] = e.detail.value;
                       return updatedStep;
@@ -147,6 +142,7 @@ const NewHabit: React.FC = () => {
               <p style={{ fontSize: '1rem' }}>How about at a certain time?</p>
               <IonGrid>
                 <IonRow class="ion-justify-content-center">
+                  {habitTimes.length > 0 && <p style={{ margin: 'auto 0' }}>at</p>}
                   {habitTimes.map((_habit, index) => (
                     <IonCol size="auto" key={index} className={`grid-item ${index % 2 === 0 ? 'square' : 'rectangle'}`}>
                       <div className='time-button'>
@@ -199,7 +195,10 @@ const NewHabit: React.FC = () => {
         </div>
 
         <FinancialModal habit={habit} setHabit={setHabit} />
-        <IonButton className='save-button' expand='block' onClick={addNewHabit} routerDirection='none'>Start New Habit</IonButton>
+        {habit.financialIncentive.active ?
+          <IonButton className='save-button' expand='block' onClick={addNewHabit} routerDirection='none'><div className='save-button-text-wrap'><h2>Start New Habit</h2><p>and</p><h2>Lock Funds</h2></div></IonButton> :
+          <IonButton className='save-button' expand='block' onClick={addNewHabit} routerDirection='none'>Start New Habit</IonButton>
+        }
       </IonContent>
     </IonPage>
   )

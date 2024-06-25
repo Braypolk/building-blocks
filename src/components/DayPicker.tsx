@@ -7,11 +7,8 @@ interface DayPickerProps {
 }
 
 const DayPicker: React.FC<DayPickerProps> = ({ onSelect, selectedDaysProp }) => {
-  console.log('selectedDaysProp', selectedDaysProp);
-  
   const [selectedDays, setSelectedDays] = useState<boolean[]>([false, false, false, false, false, false, false]);
   
-
   const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
   const handleDayClick = (index: number) => {

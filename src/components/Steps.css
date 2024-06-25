@@ -1,0 +1,87 @@
+.habit-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-step-text {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.progress-bar {
+    min-width: 360px;
+    height: 54px;
+    background: #404D5E;
+    border: 4px solid #404D5E;
+    border-radius: 13px;
+}
+
+.progress-fill {
+    position: relative;
+    background: #60B3FF;
+    width: 50%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+.progress-fill svg {
+    position: absolute;
+    right: 0;
+}
+
+.progress-count {
+    font-size: 0.75rem;
+    color: #A2A2A2;
+    text-align: center;
+}
+
+.next-step {
+    background: #AEAEAE;
+    border: 0.25rem solid #CDCDCD;
+    border-radius: 0.875rem;
+    padding: 0.5rem;
+    opacity: 0.5;
+    width: fit-content;
+    padding: 0 4.3rem;
+    max-width: 360px;
+}
+
+.next-step p {
+    font-size: 1.5rem;
+    margin: 0;
+    /* color: #A2A2A2; */
+
+}
+
+.following-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.final-goal-block {
+    min-width: 360px;
+    height: 168px;
+    border-radius: 0.875rem;
+    border: 0.25rem solid #FFE39B;
+    background: #FFD25D;
+}
+
+.final-goal-block p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.final-goal {
+    color: black;
+}
+
+.elipse div {
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    background: #A2A2A2;
+    margin: 0.125rem;
+}

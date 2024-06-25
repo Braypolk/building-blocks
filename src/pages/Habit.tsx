@@ -10,6 +10,7 @@ import { OverlayEventDetail } from '@ionic/react/dist/types/components/react-com
 import { HabitType } from '../types/types';
 import { useParams } from 'react-router';
 import HabitLog from '../components/HabitLog';
+import Steps from '../components/Steps';
 
 const Habit: React.FC = () => {
     //   const router = useIonRouter();
@@ -26,8 +27,10 @@ const Habit: React.FC = () => {
         }
     });
 
+    console.log(habitList[habitIndex]);
+
+
     const handleDaySelect = (selectedDays: boolean[]) => {
-        console.log('Selected days:', selectedDays);
         habitList[habitIndex] = { ...habitList[habitIndex], selectedDays: selectedDays }
         // You can perform any additional logic here based on the selected days
     };
@@ -42,12 +45,14 @@ const Habit: React.FC = () => {
                 <div style={{ textAlign: 'center', width: '90%', margin: '0 auto', borderBottom: '1px solid rgba(53, 53, 53, 0.3)' }}>
                     <p style={{ fontSize: '2rem', color: '#626262' }}>{habitList[habitIndex].finalGoal}</p>
                 </div>
+                <p style={{ fontSize: '0.8125rem', fontWeight: '600', textAlign: 'center' }}>Repeat</p>
                 {editMode ?
                     <DayPicker onSelect={handleDaySelect} selectedDaysProp={habitList[habitIndex].selectedDays} /> :
                     <DayPicker selectedDaysProp={habitList[habitIndex].selectedDays} />
                 }
                 <IonGrid>
                     <IonRow class="ion-justify-content-center">
+                        {habitList[habitIndex].habitTimes.length > 0 && <p style={{ margin: 'auto 0' }}>at</p>}
                         {habitList[habitIndex].habitTimes.map((_habit, index) => (
                             <IonCol size="auto" key={index} className={`grid-item ${index % 2 === 0 ? 'square' : 'rectangle'}`}>
                                 <div className='time-button'>
@@ -78,11 +83,13 @@ const Habit: React.FC = () => {
                                 </div>
                             </IonCol>
                         ))}
+                        {/* todp: make time edit functional */}
                         {editMode &&
                             <IonButton className="add-time-button" onClick={() => setHabitTimes([...habitTimes, new Date().toISOString()])}>+ Add</IonButton>
                         }
                     </IonRow>
                 </IonGrid>
+                {/* todo: hook up to real vars */}
                 <div className='top-blocks'>
                     <div className='stats'>
                         <div>
@@ -97,11 +104,13 @@ const Habit: React.FC = () => {
                     </div>
                     <div className='history-small'>
                         <p>Log</p>
-                        <HabitLog />
+                        <HabitLog selectedDays={habitList[habitIndex].selectedDays} />
                         <p>Total: 5</p>
                         {/* <p>Total: {total}</p> */}
                     </div>
                 </div>
+
+                <Steps stepArrray={habitList[habitIndex].steps} currentStep={0} />
             </IonContent>
         </IonPage>
     )

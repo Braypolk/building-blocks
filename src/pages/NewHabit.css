@@ -118,6 +118,13 @@ ion-datetime-button::part(native) {
   margin: 0 auto;
 }
 
+.time-button ion-icon {
+  position: absolute;
+    top: .5rem;
+    z-index: 1;
+    left: .5rem;
+}
+
 .fin-block {
   width: 90%;
   max-width: 380px;
@@ -160,6 +167,24 @@ ion-datetime-button::part(native) {
   text-transform: unset;
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+.save-button-text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button-text-wrap * {
+  font-weight: 400;
+  margin: 0;
+}
+
+.save-button p {
+color: #6B6B6B;
+font-size: 0.875rem;
+margin: 5px 0;
 }
 
 /* When screen is larger than sm */

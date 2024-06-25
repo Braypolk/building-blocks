@@ -2,19 +2,21 @@
     display: flex;
     gap: 10px;
     flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .stats, .history-small {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 185px;
+    min-height: 185px;
     font-size: .875rem;
     font-weight: 800;
     border: 0.5px solid #787878;
     border-radius: 0.8125rem;
     background: #fff;
-    width: 360px;
+    min-width: 360px;
     margin: 0 auto;
 }
 
@@ -51,4 +53,18 @@
 
 .history-small p {
     margin-bottom: 6px;
+}
+
+
+/* When screen is larger than sm */
+@media (min-width: 576px) {
+    .top-blocks {
+        /* max-width: 90%; */
+        flex-direction: row;
+    }
+
+    .stats, .history-small {
+        width: calc(360px + 5rem);
+        margin: 0;
+    }
 }
